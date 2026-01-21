@@ -27,6 +27,7 @@ public class CoffeeMaker {
     }
 
     public void makeCoffee(BaseDrink drink) {
+        // TODO: ADD IFS FOR VALIDATION!!
         for (String dependency : drink.ingredients.keySet()) {
             this.availability.put(
                     dependency,
