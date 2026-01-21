@@ -10,10 +10,26 @@ public class Menu {
 
     public String getAllItemsNames() {
         String result = "";
+        int counter = 1;
         for (BaseDrink itemName : this.menuItems) {
-            result = result.concat(itemName.name + "\n");
+            if (counter < this.menuItems.toArray().length) {
+                result = result.concat(itemName.name + "/");
+            } else if (counter == this.menuItems.toArray().length ){
+                result = result.concat(itemName.name);
+            }
+
+            counter++;
         }
 
         return result;
+    }
+
+    public BaseDrink findItem(String itemName) {
+        for (BaseDrink item : this.menuItems) {
+            if (item.name.equals(itemName)) {
+                return item;
+            }
+        }
+        return null;
     }
 }
