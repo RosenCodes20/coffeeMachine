@@ -1,11 +1,11 @@
 import java.util.HashMap;
 
-public abstract class BaseDrink {
+public class BaseDrink {
     public String name;
-    public float cost;
-    public HashMap<String, Float> ingredients = new HashMap<>();
+    public double cost;
+    public HashMap<String, Double> ingredients = new HashMap<>();
 
-    public BaseDrink(float water, float milk, float coffee, String name, float cost) {
+    public BaseDrink(double water, double milk, double coffee, String name, double cost) {
         this.name = name;
         this.cost = cost;
         this.ingredients.put("water", water);
