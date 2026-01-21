@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public abstract class Menu {
+public class Menu {
     ArrayList<BaseDrink> menuItems = new ArrayList<>();
     public Menu() {
         this.menuItems.add(new BaseDrink(250, 200, 24, "Espresso", 0.80));
