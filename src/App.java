@@ -7,5 +7,7 @@ public class App {
 
         System.out.print("Please select a drink from the menu (" + menu.getAllItemsNames() + "): ");
         String drink = myObj.nextLine();
+
+        BaseDrink foundDrink = menu.findItem(drink);
     }
 }
