@@ -11,6 +11,5 @@ public class App {
 
         BaseDrink foundDrink = menu.findItem(drink);
         coffeeMaker.makeCoffee(foundDrink);
-
     }
 }
