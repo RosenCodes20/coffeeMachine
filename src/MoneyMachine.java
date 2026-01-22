@@ -54,6 +54,7 @@ public class MoneyMachine {
         }
         if (change > 0) {
             System.out.println("Cannot return exact change. Transaction cancelled.");
+            System.out.println("-".repeat(50));
             return false;
         }
 
@@ -65,22 +66,27 @@ public class MoneyMachine {
         }
 
         System.out.println("Change returned:");
-        for (String coin : changeToGive.keySet()) {
-            System.out.println(coin + " x " + changeToGive.get(coin));
+        if (!changeToGive.isEmpty()) {
+            for (String coin : changeToGive.keySet()) {
+                System.out.println(coin + " x " + changeToGive.get(coin));
+            }
+        } else {
+            System.out.println("Nothing to return :)");
         }
-        System.out.println("------");
+        System.out.println("-".repeat(50));
 
         return true;
     }
 
     public void processCoins(double cost, Scanner scanner) {
         System.out.println("Please insert coins, Product cost: " + cost + this.moneyCurrency);
+        System.out.println("-".repeat(50));
 
         for (String coinValue : this.euroCents.keySet()) {
             System.out.print("How many " + coinValue + "?: ");
             double enteredInputCoin = scanner.nextDouble();
             this.moneyReceived += enteredInputCoin * this.euroCents.get(coinValue);
-            System.out.println("----");
+            System.out.println("-".repeat(50));
         }
 
     }

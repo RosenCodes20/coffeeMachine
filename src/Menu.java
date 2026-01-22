@@ -31,6 +31,7 @@ public class Menu {
             }
         }
         System.out.println("Didn't find drink with that name, sorry :(");
+        System.out.println("-".repeat(50));
         return null;
     }
 }

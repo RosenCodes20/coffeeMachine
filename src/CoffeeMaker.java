@@ -40,8 +40,10 @@ public class CoffeeMaker {
             }
             drink.prepare();
             System.out.println("Here is your " + drink.getName() + " ☕️. Enjoy!");
+            System.out.println("-".repeat(50));
         } else {
             System.out.println("Sorry, There is not enough resources in the machine, please wait till we add more!");
+            System.out.println("-".repeat(50));
         }
     }
 }
