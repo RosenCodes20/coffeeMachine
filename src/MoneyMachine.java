@@ -29,7 +29,7 @@ public class MoneyMachine {
 
     public void processCoins(double cost) {
         Scanner myObj = new Scanner(System.in);
-        System.out.println("Please insert coins, Product cost: " + cost);
+        System.out.println("Please insert coins, Product cost: " + cost + this.moneyCurrency);
 
         for (String coinValue : this.euroCents.keySet()) {
             System.out.print("How many " + coinValue + "?: ");
