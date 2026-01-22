@@ -39,7 +39,7 @@ public class CoffeeMaker {
                         this.availability.get(dependency) - drink.getIngredients().get(dependency)
                 );
             }
-
+            drink.prepare();
             System.out.println("Here is your " + drink.getName() + " ☕️. Enjoy!");
         } else {
             System.out.println("Sorry, There is not enough resources in the machine, please wait till we add more!");
