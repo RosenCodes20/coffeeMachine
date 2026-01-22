@@ -68,6 +68,7 @@ public class MoneyMachine {
         for (String coin : changeToGive.keySet()) {
             System.out.println(coin + " x " + changeToGive.get(coin));
         }
+        System.out.println("------");
 
         return true;
     }
