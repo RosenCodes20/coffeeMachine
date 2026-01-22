@@ -3,7 +3,7 @@ import java.util.HashMap;
 public abstract class BaseDrink {
     private String name;
     private double cost;
-    private HashMap<String, Integer> ingredients = new HashMap<>();
+    private HashMap<String, Integer> ingredients;
 
     public BaseDrink(String name, double cost, HashMap<String, Integer> ingredients) {
         this.name = name;
