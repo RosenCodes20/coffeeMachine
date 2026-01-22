@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class BaseDrink {
+public abstract class BaseDrink {
     private String name;
     private double cost;
     private HashMap<String, Integer> ingredients = new HashMap<>();
