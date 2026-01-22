@@ -41,15 +41,17 @@ java App.java
 ```
 Please select a drink from the menu (Espresso/Latte/Cappuccino): latte
 Please insert coins, Product cost: 1.0€
-How many 1_euro_cent?: 0
-How many 2_euro_cents?: 0
-How many 5_euro_cents?: 0
-How many 10_euro_cents?: 0
-How many 20_euro_cents?: 0
-How many 50_euro_cents?: 2
-How many 1_euro?: 0
 How many 2_euro?: 1
-Here is 2.00 € in change
+How many 1_euro?: 0
+How many 50_euro_cents?: 0
+How many 20_euro_cents?: 0
+How many 10_euro_cents?: 0
+How many 5_euro_cents?: 0
+How many 2_euro_cents?: 0
+How many 1_euro_cent?: 0
+Change returned:
+1_euro x 1
+Here is 1.00 € in change
 Pulling an latte out...
 Here is your Latte ☕️. Enjoy!
 Please select a drink from the menu (Espresso/Latte/Cappuccino): off
