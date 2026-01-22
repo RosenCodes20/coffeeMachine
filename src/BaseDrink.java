@@ -5,12 +5,9 @@ public abstract class BaseDrink {
     private double cost;
     private HashMap<String, Integer> ingredients = new HashMap<>();
 
-    public BaseDrink(int water, int milk, int coffee, String name, double cost) {
+    public BaseDrink(String name, double cost, HashMap<String, Integer> ingredients) {
         this.name = name;
         this.cost = cost;
-        this.ingredients.put("water", water);
-        this.ingredients.put("milk", milk);
-        this.ingredients.put("coffee", coffee);
     }
 
     public String getName() {
@@ -36,4 +33,6 @@ public abstract class BaseDrink {
     public void setIngredients(HashMap<String, Integer> enteredIngredients) {
         this.ingredients = enteredIngredients;
     }
+
+    public abstract void prepare();
 }
