@@ -26,7 +26,7 @@ public class Menu {
 
     public BaseDrink findItem(String itemName) {
         for (BaseDrink item : this.menuItems) {
-            if (item.name.equals(itemName)) {
+            if (item.name.equalsIgnoreCase(itemName)) {
                 return item;
             }
         }
