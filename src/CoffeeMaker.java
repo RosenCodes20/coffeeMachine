@@ -4,10 +4,14 @@ import java.util.HashMap;
 public class CoffeeMaker {
     public HashMap<String, Integer> availability = new HashMap<>();
 
-    public CoffeeMaker() {
+    public void refillMachine() {
         this.availability.put("water", 2000);
         this.availability.put("milk", 2000);
         this.availability.put("coffee", 600);
+    }
+
+    public CoffeeMaker() {
+        refillMachine();
     }
 
     public String coffeeMachineReport() {
