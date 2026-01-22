@@ -80,6 +80,7 @@ public class MoneyMachine {
             System.out.print("How many " + coinValue + "?: ");
             double enteredInputCoin = scanner.nextDouble();
             this.moneyReceived += enteredInputCoin * this.euroCents.get(coinValue);
+            System.out.println("----");
         }
 
     }
