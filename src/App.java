@@ -19,8 +19,9 @@ public class App {
             } else {
                 BaseDrink foundDrink = menu.findItem(drink);
 
-                if (moneyMachine.)
-                coffeeMaker.makeCoffee(foundDrink);
+                if (moneyMachine.makePayment(foundDrink.cost)) {
+                    coffeeMaker.makeCoffee(foundDrink);
+                }
             }
         }
     }

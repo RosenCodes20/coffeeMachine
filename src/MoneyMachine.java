@@ -1,6 +1,5 @@
 import java.util.HashMap;
 import java.util.Scanner;
-import java.util.Set;
 
 public class MoneyMachine {
     private final String moneyCurrency = "€";
@@ -27,7 +26,7 @@ public class MoneyMachine {
         return "Money: " + this.profit + " " + this.moneyCurrency;
     }
 
-    public double processCoins() {
+    public void processCoins() {
         Scanner myObj = new Scanner(System.in);
         System.out.println("Please insert coins");
 
@@ -37,7 +36,6 @@ public class MoneyMachine {
             this.moneyReceived += enteredInputCoin * this.euroCents.get(coinValue);
         }
 
-        return this.moneyReceived;
     }
 
     public boolean makePayment(double cost) {
