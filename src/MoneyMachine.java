@@ -48,7 +48,7 @@ public class MoneyMachine {
             System.out.println("Here is " + change + this.moneyCurrency + " in change");
             this.profit += cost;
             this.moneyReceived = 0;
-            return true
+            return true;
         } else {
             System.out.println("Sorry that's not enough money! Money refunded!");
             this.moneyReceived = 0;
