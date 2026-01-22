@@ -30,7 +30,7 @@ public class MoneyMachine {
     public void processCoins() {
         Scanner myObj = new Scanner(System.in);
         System.out.println("Please insert coins");
-        System.out.println(this.euroCents.keySet());
+
         for (String coinValue : this.euroCents.keySet()) {
             System.out.print("How many " + coinValue + "?: ");
             double enteredInputCoin = myObj.nextDouble();
