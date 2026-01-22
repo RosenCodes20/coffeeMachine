@@ -5,7 +5,7 @@ public class Menu {
     public Menu() {
         this.menuItems.add(new Espresso());
         this.menuItems.add(new Latte());
-        this.menuItems.add(new BaseDrink(180, 150, 60, "Cappuccino", 0.70));
+        this.menuItems.add(new Cappuccino());
     }
 
     public String getAllItemsNames() {
