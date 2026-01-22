@@ -8,6 +8,7 @@ public abstract class BaseDrink {
     public BaseDrink(String name, double cost, HashMap<String, Integer> ingredients) {
         this.name = name;
         this.cost = cost;
+        this.ingredients = ingredients;
     }
 
     public String getName() {

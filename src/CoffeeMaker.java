@@ -20,6 +20,7 @@ public class CoffeeMaker {
     }
 
     public Boolean areResourcesSufficient(BaseDrink drink) {
+        System.out.println(drink.getIngredients());
         if (drink.getIngredients().get("water") > this.availability.get("water") ||
             drink.getIngredients().get("milk") > this.availability.get("milk") ||
             drink.getIngredients().get("coffee") > this.availability.get("coffee")) {
