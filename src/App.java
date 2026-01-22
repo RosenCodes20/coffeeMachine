@@ -22,7 +22,7 @@ public class App {
             } else {
                 BaseDrink foundDrink = menu.findItem(choiceOrDrink);
 
-                if (moneyMachine.makePayment(foundDrink.getCost())) {
+                if (moneyMachine.makePayment(foundDrink.getCost(), myObj)) {
                     coffeeMaker.makeCoffee(foundDrink);
                 }
             }

@@ -27,20 +27,19 @@ public class MoneyMachine {
         return "Money: " + this.profit + " " + this.moneyCurrency;
     }
 
-    public void processCoins(double cost) {
-        Scanner myObj = new Scanner(System.in);
+    public void processCoins(double cost, Scanner scanner) {
         System.out.println("Please insert coins, Product cost: " + cost + this.moneyCurrency);
 
         for (String coinValue : this.euroCents.keySet()) {
             System.out.print("How many " + coinValue + "?: ");
-            double enteredInputCoin = myObj.nextDouble();
+            double enteredInputCoin = scanner.nextDouble();
             this.moneyReceived += enteredInputCoin * this.euroCents.get(coinValue);
         }
 
     }
 
-    public boolean makePayment(double cost) {
-        this.processCoins(cost);
+    public boolean makePayment(double cost, Scanner scanner) {
+        this.processCoins(cost, scanner);
 
         if (this.moneyReceived >= cost) {
             double change = this.moneyReceived - cost;
