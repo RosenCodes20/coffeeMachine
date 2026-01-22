@@ -52,7 +52,6 @@ public class MoneyMachine {
                 change = Math.round(change * 100.0) / 100.0;
             }
         }
-        System.out.println(change);
         if (change > 0) {
             System.out.println("Cannot return exact change. Transaction cancelled.");
             return false;
