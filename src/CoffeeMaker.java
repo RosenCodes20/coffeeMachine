@@ -20,9 +20,9 @@ public class CoffeeMaker {
     }
 
     public Boolean areResourcesSufficient(BaseDrink drink) {
-        if (drink.ingredients.get("water") > this.availability.get("water") ||
-            drink.ingredients.get("milk") > this.availability.get("milk") ||
-            drink.ingredients.get("coffee") > this.availability.get("coffee")) {
+        if (drink.getIngredients().get("water") > this.availability.get("water") ||
+            drink.getIngredients().get("milk") > this.availability.get("milk") ||
+            drink.getIngredients().get("coffee") > this.availability.get("coffee")) {
             return false;
         } else {
             return true;
@@ -32,14 +32,14 @@ public class CoffeeMaker {
     public void makeCoffee(BaseDrink drink) {
         // TODO: ADD IFS FOR VALIDATION!!
         if (areResourcesSufficient(drink)) {
-            for (String dependency : drink.ingredients.keySet()) {
+            for (String dependency : drink.getIngredients().keySet()) {
                 this.availability.put(
                         dependency,
-                        this.availability.get(dependency) - drink.ingredients.get(dependency)
+                        this.availability.get(dependency) - drink.getIngredients().get(dependency)
                 );
             }
 
-            System.out.println("Here is your " + drink.name + " ☕️. Enjoy!");
+            System.out.println("Here is your " + drink.getName() + " ☕️. Enjoy!");
         } else {
             System.out.println("Sorry, There is not enough resources in the machine, please wait till we add more!");
         }

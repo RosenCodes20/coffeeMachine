@@ -28,4 +28,12 @@ public class BaseDrink {
     public void setCost(double enteredCost) {
         this.cost = enteredCost;
     }
+
+    public HashMap<String, Integer> getIngredients() {
+        return this.ingredients;
+    }
+
+    public void setIngredients(HashMap<String, Integer> enteredIngredients) {
+        this.ingredients = enteredIngredients;
+    }
 }

@@ -13,9 +13,9 @@ public class Menu {
         int counter = 1;
         for (BaseDrink itemName : this.menuItems) {
             if (counter < this.menuItems.toArray().length) {
-                result = result.concat(itemName.name + "/");
+                result = result.concat(itemName.getName() + "/");
             } else if (counter == this.menuItems.toArray().length ){
-                result = result.concat(itemName.name);
+                result = result.concat(itemName.getName());
             }
 
             counter++;
@@ -26,7 +26,7 @@ public class Menu {
 
     public BaseDrink findItem(String itemName) {
         for (BaseDrink item : this.menuItems) {
-            if (item.name.equalsIgnoreCase(itemName)) {
+            if (item.getName().equalsIgnoreCase(itemName)) {
                 return item;
             }
         }
