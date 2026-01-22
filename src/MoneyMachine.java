@@ -27,9 +27,9 @@ public class MoneyMachine {
         return "Money: " + this.profit + " " + this.moneyCurrency;
     }
 
-    public void processCoins() {
+    public void processCoins(double cost) {
         Scanner myObj = new Scanner(System.in);
-        System.out.println("Please insert coins");
+        System.out.println("Please insert coins, Product cost: " + cost);
 
         for (String coinValue : this.euroCents.keySet()) {
             System.out.print("How many " + coinValue + "?: ");
@@ -40,7 +40,7 @@ public class MoneyMachine {
     }
 
     public boolean makePayment(double cost) {
-        this.processCoins();
+        this.processCoins(cost);
 
         if (this.moneyReceived >= cost) {
             double change = Math.round(this.moneyReceived - cost);

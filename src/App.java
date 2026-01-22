@@ -12,6 +12,7 @@ public class App {
             System.out.print("Please select a drink from the menu (" + menu.getAllItemsNames() + "): ");
             String drink = myObj.nextLine();
             if (drink.equals("off")) {
+                System.out.println("Turning off.........");
                 isOn = false;
             } else if (drink.equals("report")) {
                 System.out.println(coffeeMaker.coffeeMachineReport());
