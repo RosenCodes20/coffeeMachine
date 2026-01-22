@@ -7,17 +7,24 @@ public class MoneyMachine {
     private double profit = 0;
     private double moneyReceived = 0;
     private final LinkedHashMap<String, Double> euroCents = new LinkedHashMap<>();
+    private final LinkedHashMap<String, Integer> moneyStock = new LinkedHashMap<>();
+
+    private void addMoney(String name, double value, int stock) {
+        euroCents.put(name, value);
+        moneyStock.put(name, stock);
+    }
 
     private void addEuroCents() {
-        this.euroCents.put("1_euro_cent", 0.01);
-        this.euroCents.put("2_euro_cents", 0.02);
-        this.euroCents.put("5_euro_cents", 0.05);
-        this.euroCents.put("10_euro_cents", 0.10);
-        this.euroCents.put("20_euro_cents", 0.20);
-        this.euroCents.put("50_euro_cents", 0.50);
-        this.euroCents.put("1_euro", 1.0);
-        this.euroCents.put("2_euro", 2.0);
+        addMoney("1_euro_cent", 0.01, 20);
+        addMoney("2_euro_cents", 0.02, 10);
+        addMoney("5_euro_cents", 0.05, 20);
+        addMoney("10_euro_cents", 0.10, 30);
+        addMoney("20_euro_cents", 0.20, 40);
+        addMoney("50_euro_cents", 0.50, 10);
+        addMoney("1_euro", 1.0, 15);
+        addMoney("2_euro", 2.0, 6);
     }
+
 
     public MoneyMachine() {
         addEuroCents();
