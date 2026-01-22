@@ -1,10 +1,11 @@
 import java.util.HashMap;
+import java.util.Scanner;
+import java.util.Set;
 
 public class MoneyMachine {
-    private final String moneyCurrency = "€";
     private double profit = 0;
     private double moneyReceived = 0;
-    private HashMap<String, Double> euroCents = new HashMap<>();
+    private final HashMap<String, Double> euroCents = new HashMap<>();
 
     private void addEuroCents() {
         this.euroCents.put("1_euro_cent", 0.01);
@@ -22,10 +23,18 @@ public class MoneyMachine {
     }
 
     public String moneyMachineReport() {
-        return "Money: " + this.profit + " " + this.moneyCurrency;
+        String moneyCurrency = "€";
+        return "Money: " + this.profit + " " + moneyCurrency;
     }
 
     public double processCoins() {
+        Scanner myObj = new Scanner(System.in);
         System.out.println("Please insert coins");
+
+        for (String coinValue : this.euroCents.keySet()) {
+            System.out.print("How many " + coinValue + "?: ");
+            double enteredInputCoin = myObj.nextDouble();
+            this.moneyReceived += enteredInputCoin * this.euroCents.get(coinValue);
+        }
     }
 }
