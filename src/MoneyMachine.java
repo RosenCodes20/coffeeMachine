@@ -3,6 +3,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class MoneyMachine {
+    private final String moneyCurrency = "€";
     private double profit = 0;
     private double moneyReceived = 0;
     private final HashMap<String, Double> euroCents = new HashMap<>();
@@ -23,8 +24,7 @@ public class MoneyMachine {
     }
 
     public String moneyMachineReport() {
-        String moneyCurrency = "€";
-        return "Money: " + this.profit + " " + moneyCurrency;
+        return "Money: " + this.profit + " " + this.moneyCurrency;
     }
 
     public double processCoins() {
@@ -38,5 +38,19 @@ public class MoneyMachine {
         }
 
         return this.moneyReceived;
+    }
+
+    public void makePayment(double cost) {
+        this.processCoins();
+
+        if (this.moneyReceived >= cost) {
+            double change = Math.round(this.moneyReceived - cost);
+            System.out.println("Here is " + change + this.moneyCurrency + " in change");
+            this.profit += cost;
+            this.moneyReceived = 0;
+        } else {
+            System.out.println("Sorry that's not enough money! Money refunded!");
+            this.moneyReceived = 0;
+        }
     }
 }
