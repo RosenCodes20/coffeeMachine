@@ -43,7 +43,7 @@ public class MoneyMachine {
         this.processCoins(cost);
 
         if (this.moneyReceived >= cost) {
-            double change = Math.round(this.moneyReceived - cost);
+            double change = this.moneyReceived - cost;
             System.out.println("Here is " + change + this.moneyCurrency + " in change");
             this.profit += cost;
             this.moneyReceived = 0;

@@ -30,6 +30,7 @@ public class Menu {
                 return item;
             }
         }
+        System.out.println("Didn't find drink with that name, sorry :(");
         return null;
     }
 }
