@@ -2,14 +2,26 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        Scanner myObj = new Scanner(System.in);
+        boolean isOn = true;
         Menu menu = new Menu();
         CoffeeMaker coffeeMaker = new CoffeeMaker();
+        MoneyMachine moneyMachine = new MoneyMachine();
 
-        System.out.print("Please select a drink from the menu (" + menu.getAllItemsNames() + "): ");
-        String drink = myObj.nextLine();
+        while (isOn) {
+            Scanner myObj = new Scanner(System.in);
+            System.out.print("Please select a drink from the menu (" + menu.getAllItemsNames() + "): ");
+            String drink = myObj.nextLine();
+            if (drink.equals("off")) {
+                isOn = false;
+            } else if (drink.equals("report")) {
+                System.out.println(coffeeMaker.coffeeMachineReport());
+                System.out.println(moneyMachine.moneyMachineReport());
+            } else {
+                BaseDrink foundDrink = menu.findItem(drink);
 
-        BaseDrink foundDrink = menu.findItem(drink);
-        coffeeMaker.makeCoffee(foundDrink);
+                if (moneyMachine.)
+                coffeeMaker.makeCoffee(foundDrink);
+            }
+        }
     }
 }

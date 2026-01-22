@@ -40,7 +40,7 @@ public class MoneyMachine {
         return this.moneyReceived;
     }
 
-    public void makePayment(double cost) {
+    public boolean makePayment(double cost) {
         this.processCoins();
 
         if (this.moneyReceived >= cost) {
@@ -48,9 +48,11 @@ public class MoneyMachine {
             System.out.println("Here is " + change + this.moneyCurrency + " in change");
             this.profit += cost;
             this.moneyReceived = 0;
+            return true
         } else {
             System.out.println("Sorry that's not enough money! Money refunded!");
             this.moneyReceived = 0;
+            return false;
         }
     }
 }
