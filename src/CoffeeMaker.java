@@ -28,13 +28,18 @@ public class CoffeeMaker {
 
     public void makeCoffee(BaseDrink drink) {
         // TODO: ADD IFS FOR VALIDATION!!
-        for (String dependency : drink.ingredients.keySet()) {
-            this.availability.put(
-                    dependency,
-                    this.availability.get(dependency) - drink.ingredients.get(dependency)
-            );
+        if (areResourcesSufficient(drink)) {
+            for (String dependency : drink.ingredients.keySet()) {
+                this.availability.put(
+                        dependency,
+                        this.availability.get(dependency) - drink.ingredients.get(dependency)
+                );
+            }
+
+            System.out.println("Here is your " + drink.name + " ☕️. Enjoy!");
+        } else {
+            System.out.println("Sorry, There is not enough resources in the machine, please wait till we add more!");
         }
 
-        System.out.println("Here is your " + drink.name + " ☕️. Enjoy!");
     }
 }
