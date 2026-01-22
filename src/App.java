@@ -21,6 +21,9 @@ public class App {
                 System.out.println(moneyMachine.moneyMachineReport());
             } else {
                 BaseDrink foundDrink = menu.findItem(choiceOrDrink);
+                if (foundDrink == null) {
+                    continue;
+                }
 
                 if (moneyMachine.makePayment(foundDrink.getCost(), myObj)) {
                     coffeeMaker.makeCoffee(foundDrink);
