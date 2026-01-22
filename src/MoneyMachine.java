@@ -15,14 +15,14 @@ public class MoneyMachine {
     }
 
     private void addEuroCents() {
-        addMoney("1_euro_cent", 0.01, 20);
-        addMoney("2_euro_cents", 0.02, 10);
-        addMoney("5_euro_cents", 0.05, 20);
-        addMoney("10_euro_cents", 0.10, 30);
-        addMoney("20_euro_cents", 0.20, 40);
-        addMoney("50_euro_cents", 0.50, 10);
-        addMoney("1_euro", 1.0, 15);
         addMoney("2_euro", 2.0, 6);
+        addMoney("1_euro", 1.0, 15);
+        addMoney("50_euro_cents", 0.50, 10);
+        addMoney("20_euro_cents", 0.20, 40);
+        addMoney("10_euro_cents", 0.10, 30);
+        addMoney("5_euro_cents", 0.05, 20);
+        addMoney("2_euro_cents", 0.02, 10);
+        addMoney("1_euro_cent", 0.01, 20);
     }
 
 
@@ -32,6 +32,45 @@ public class MoneyMachine {
 
     public String moneyMachineReport() {
         return "Money: " + this.profit + " " + this.moneyCurrency;
+    }
+
+    public boolean giveChange(double change) {
+        change = Math.round(change * 100.0) / 100.0;
+
+        HashMap<String, Integer> changeToGive = new HashMap<>();
+
+        for (String coin : euroCents.keySet()) {
+            double value = euroCents.get(coin);
+            int available = this.moneyStock.get(coin);
+
+            int needed = (int) (change / value);
+            int used = Math.min(needed, available);
+
+            if (used > 0) {
+                changeToGive.put(coin, used);
+                change -= used * value;
+                change = Math.round(change * 100.0) / 100.0;
+            }
+        }
+        System.out.println(change);
+        if (change > 0) {
+            System.out.println("Cannot return exact change. Transaction cancelled.");
+            return false;
+        }
+
+        for (String coin : changeToGive.keySet()) {
+            this.moneyStock.put(
+                    coin,
+                    this.moneyStock.get(coin) - changeToGive.get(coin)
+            );
+        }
+
+        System.out.println("Change returned:");
+        for (String coin : changeToGive.keySet()) {
+            System.out.println(coin + " x " + changeToGive.get(coin));
+        }
+
+        return true;
     }
 
     public void processCoins(double cost, Scanner scanner) {
@@ -50,6 +89,12 @@ public class MoneyMachine {
 
         if (this.moneyReceived >= cost) {
             double change = this.moneyReceived - cost;
+
+            if (!giveChange(change)) {
+                this.moneyReceived = 0;
+                return false;
+            }
+
             System.out.printf("Here is %.2f %s in change%n", change, this.moneyCurrency);
             this.profit += cost;
             this.moneyReceived = 0;
