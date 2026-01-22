@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class CoffeeMaker {
-    public HashMap<String, Integer> availability = new HashMap<>();
+    private final HashMap<String, Integer> availability = new HashMap<>();
 
     public void refillMachine() {
         this.availability.put("water", 2000);
