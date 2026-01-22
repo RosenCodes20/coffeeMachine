@@ -36,5 +36,7 @@ public class MoneyMachine {
             double enteredInputCoin = myObj.nextDouble();
             this.moneyReceived += enteredInputCoin * this.euroCents.get(coinValue);
         }
+
+        return this.moneyReceived;
     }
 }
