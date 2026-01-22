@@ -3,7 +3,7 @@ import java.util.HashMap;
 public class Cappuccino extends BaseDrink {
     public Cappuccino() {
         super(
-                "Espresso",
+                "Cappuccino",
                 0.70,
                 createIngredients()
         );
