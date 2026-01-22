@@ -6,10 +6,9 @@ public class App {
         Menu menu = new Menu();
         CoffeeMaker coffeeMaker = new CoffeeMaker();
         MoneyMachine moneyMachine = new MoneyMachine();
-        Scanner myObj = new Scanner(System.in);
-
 
         while (isOn) {
+            Scanner myObj = new Scanner(System.in);
             System.out.print("Please select a drink from the menu (" + menu.getAllItemsNames() + "): ");
             String choiceOrDrink = myObj.nextLine().trim();
 
