@@ -11,7 +11,7 @@ public class App {
 
         while (isOn) {
             System.out.print("Please select a drink from the menu (" + menu.getAllItemsNames() + "): ");
-            String choiceOrDrink = myObj.nextLine();
+            String choiceOrDrink = myObj.nextLine().trim();
 
             if (choiceOrDrink.equals("off")) {
                 System.out.println("Turning off.........");
