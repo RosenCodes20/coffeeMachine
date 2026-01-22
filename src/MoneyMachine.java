@@ -44,7 +44,7 @@ public class MoneyMachine {
 
         if (this.moneyReceived >= cost) {
             double change = this.moneyReceived - cost;
-            System.out.println("Here is " + change + this.moneyCurrency + " in change");
+            System.out.printf("Here is %.2f %s in change%n", change, this.moneyCurrency);
             this.profit += cost;
             this.moneyReceived = 0;
             return true;

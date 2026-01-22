@@ -1,9 +1,9 @@
 import java.util.HashMap;
 
 public class BaseDrink {
-    public String name;
-    public double cost;
-    public HashMap<String, Integer> ingredients = new HashMap<>();
+    private String name;
+    private double cost;
+    private HashMap<String, Integer> ingredients = new HashMap<>();
 
     public BaseDrink(int water, int milk, int coffee, String name, double cost) {
         this.name = name;
