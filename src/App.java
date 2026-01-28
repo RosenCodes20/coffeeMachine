@@ -18,6 +18,9 @@ public class App {
             } else if (choiceOrDrink.equals("report")) {
                 System.out.println(coffeeMaker.coffeeMachineReport());
                 System.out.println(moneyMachine.moneyMachineReport());
+            } else if (choiceOrDrink.equals("refill")) {
+                coffeeMaker.refillMachine();
+                System.out.println("Refilled the machine with coffee, water and milk again!");
             } else {
                 BaseDrink foundDrink = menu.findItem(choiceOrDrink);
                 if (foundDrink == null) {
