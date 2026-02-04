@@ -1,12 +1,12 @@
 import java.util.HashMap;
 
 public class CoffeeMaker {
-    private final HashMap<String, Integer> availability = new HashMap<>();
+    private final HashMap<Ingredients, Integer> availability = new HashMap<>();
 
     public void refillMachine() {
-        this.availability.put("water", 2000);
-        this.availability.put("milk", 2000);
-        this.availability.put("coffee", 600);
+        this.availability.put(Ingredients.WATER, 2000);
+        this.availability.put(Ingredients.MILK, 2000);
+        this.availability.put(Ingredients.COFFEE, 600);
     }
 
     public CoffeeMaker() {
@@ -14,15 +14,15 @@ public class CoffeeMaker {
     }
 
     public String coffeeMachineReport() {
-        return "Available water: " + this.availability.get("water") + "\n" +
-                "Available milk: " + this.availability.get("milk") + "\n" +
-                "Available coffee: " + this.availability.get("coffee");
+        return "Available water: " + this.availability.get(Ingredients.WATER) + "\n" +
+                "Available milk: " + this.availability.get(Ingredients.MILK) + "\n" +
+                "Available coffee: " + this.availability.get(Ingredients.COFFEE);
     }
 
     public Boolean areResourcesSufficient(BaseDrink drink) {
-        if (drink.getIngredients().get("water") > this.availability.get("water") ||
-            drink.getIngredients().get("milk") > this.availability.get("milk") ||
-            drink.getIngredients().get("coffee") > this.availability.get("coffee")) {
+        if (drink.getIngredients().get(Ingredients.WATER) > this.availability.get(Ingredients.WATER) ||
+            drink.getIngredients().get(Ingredients.MILK) > this.availability.get(Ingredients.MILK) ||
+            drink.getIngredients().get(Ingredients.COFFEE) > this.availability.get(Ingredients.COFFEE)) {
             return false;
         } else {
             return true;
@@ -34,7 +34,7 @@ public class CoffeeMaker {
         if (areResourcesSufficient(drink)) {
             for (Ingredients dependency : drink.getIngredients().keySet()) {
                 this.availability.put(
-                        String.valueOf(dependency),
+                        dependency,
                         this.availability.get(dependency) - drink.getIngredients().get(dependency)
                 );
             }
