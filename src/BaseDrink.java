@@ -1,11 +1,12 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public abstract class BaseDrink {
     private String name;
     private double cost;
-    private HashMap<Ingredients, Integer> ingredients;
+    private Map<Ingredients, Integer> ingredients;
 
-    public BaseDrink(String name, double cost, HashMap<Ingredients, Integer> ingredients) {
+    public BaseDrink(String name, double cost, Map<Ingredients, Integer> ingredients) {
         this.name = name;
         this.cost = cost;
         this.ingredients = ingredients;
@@ -27,11 +28,11 @@ public abstract class BaseDrink {
         this.cost = enteredCost;
     }
 
-    public HashMap<Ingredients, Integer> getIngredients() {
+    public Map<Ingredients, Integer> getIngredients() {
         return this.ingredients;
     }
 
-    public void setIngredients(HashMap<Ingredients, Integer> enteredIngredients) {
+    public void setIngredients(Map<Ingredients, Integer> enteredIngredients) {
         this.ingredients = enteredIngredients;
     }
 
