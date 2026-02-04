@@ -32,9 +32,9 @@ public class CoffeeMaker {
     public void makeCoffee(BaseDrink drink) {
         // TODO: ADD IFS FOR VALIDATION!!
         if (areResourcesSufficient(drink)) {
-            for (String dependency : drink.getIngredients().keySet()) {
+            for (Ingredients dependency : drink.getIngredients().keySet()) {
                 this.availability.put(
-                        dependency,
+                        String.valueOf(dependency),
                         this.availability.get(dependency) - drink.getIngredients().get(dependency)
                 );
             }
