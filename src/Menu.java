@@ -3,9 +3,9 @@ import java.util.ArrayList;
 public class Menu {
     private final ArrayList<BaseDrink> menuItems = new ArrayList<>();
     public Menu() {
-        this.menuItems.add(new Espresso());
-        this.menuItems.add(new Latte());
-        this.menuItems.add(new Cappuccino());
+        this.menuItems.add(new Drink(DrinkType.ESPRESSO));
+        this.menuItems.add(new Drink(DrinkType.LATTE));
+        this.menuItems.add(new Drink(DrinkType.CAPPUCCINO));
     }
 
     public String getAllItemsNames() {
