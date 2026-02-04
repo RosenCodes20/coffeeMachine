@@ -34,4 +34,22 @@ public enum DrinkType {
     private final String name;
     private final double cost;
     private final Map<Ingredients, Integer> ingredients;
+
+    DrinkType(String name, double cost, Map<Ingredients, Integer> ingredients) {
+        this.name = name;
+        this.cost = cost;
+        this.ingredients = ingredients;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public double getCost() {
+        return this.cost;
+    }
+
+    public Map<Ingredients, Integer> getIngredients() {
+        return this.ingredients;
+    }
 }
