@@ -3,9 +3,9 @@ import java.util.HashMap;
 public abstract class BaseDrink {
     private String name;
     private double cost;
-    private HashMap<String, Integer> ingredients;
+    private HashMap<Ingredients, Integer> ingredients;
 
-    public BaseDrink(String name, double cost, HashMap<String, Integer> ingredients) {
+    public BaseDrink(String name, double cost, HashMap<Ingredients, Integer> ingredients) {
         this.name = name;
         this.cost = cost;
         this.ingredients = ingredients;
@@ -27,11 +27,11 @@ public abstract class BaseDrink {
         this.cost = enteredCost;
     }
 
-    public HashMap<String, Integer> getIngredients() {
+    public HashMap<Ingredients, Integer> getIngredients() {
         return this.ingredients;
     }
 
-    public void setIngredients(HashMap<String, Integer> enteredIngredients) {
+    public void setIngredients(HashMap<Ingredients, Integer> enteredIngredients) {
         this.ingredients = enteredIngredients;
     }
 
